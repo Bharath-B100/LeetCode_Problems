@@ -1,0 +1,12 @@
+// Last updated: 5/25/2026, 11:12:06 AM
+class Solution {
+    public int minNumberOperations(int[] target) {
+        int sum = target[0];
+        for (int i = 1; i < target.length; i++) {
+            if (target[i] > target[i - 1]) {
+                sum += target[i] - target[i - 1];
+            }
+        }
+        return sum;
+    }
+}
