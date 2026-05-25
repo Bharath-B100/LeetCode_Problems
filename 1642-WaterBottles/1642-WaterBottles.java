@@ -1,0 +1,14 @@
+// Last updated: 5/25/2026, 11:12:05 AM
+class Solution {
+    public int numWaterBottles(int numBottles, int numExchange) {
+        int drinked = 0;
+        int eb = 0; 
+        while (numBottles > 0) {
+            drinked += numBottles;  
+            eb += numBottles;        
+            numBottles = eb / numExchange; 
+            eb = eb % numExchange;        
+        }
+        return drinked;
+    }
+}
