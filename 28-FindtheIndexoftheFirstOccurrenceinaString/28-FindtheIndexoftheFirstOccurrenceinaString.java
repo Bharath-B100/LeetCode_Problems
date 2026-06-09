@@ -1,8 +1,12 @@
-// Last updated: 6/9/2026, 10:07:04 AM
+// Last updated: 6/9/2026, 10:24:23 AM
 1class Solution {
-2    public boolean repeatedSubstringPattern(String s) {
-3        String res = s + s;
-4        String str =res.substring(1,res.length()-1);
-5        return str.contains(s);
-6    }
-7}
+2    public List<String> findRepeatedDnaSequences(String s) {
+3    Set seen = new HashSet(), repeated = new HashSet();
+4    for (int i = 0; i + 9 < s.length(); i++) {
+5        String ten = s.substring(i, i + 10);
+6        if (!seen.add(ten))
+7            repeated.add(ten);
+8    }
+9    return new ArrayList(repeated);
+10    }
+11}
