@@ -1,26 +1,33 @@
-// Last updated: 5/25/2026, 11:16:28 AM
-class Solution {
-    public int evalRPN(String[] tokens) {
-        Stack<Integer> stack = new Stack<>();
-
-        for (String c : tokens) {
-            if (c.equals("+")) {
-                stack.push(stack.pop() + stack.pop());
-            } else if (c.equals("-")) {
-                int second = stack.pop();
-                int first = stack.pop();
-                stack.push(first - second);
-            } else if (c.equals("*")) {
-                stack.push(stack.pop() * stack.pop());
-            } else if (c.equals("/")) {
-                int second = stack.pop();
-                int first = stack.pop();
-                stack.push(first / second);
-            } else {
-                stack.push(Integer.parseInt(c));
-            }
-        }
-
-        return stack.peek();        
-    }
-}
+// Last updated: 6/22/2026, 10:28:00 AM
+1class Solution {
+2    public int evalRPN(String[] t) {
+3        Stack<Integer> st = new Stack<>();
+4        for (String token : t) {
+5            if (token.equals("+"))
+6            {
+7                int num1 = st.pop();
+8                int num2 = st.pop();
+9                st.push(num2 + num1);
+10            }
+11            else if (token.equals("-")) {
+12                int num1 = st.pop();
+13                int num2 = st.pop();
+14                st.push(num2 - num1);
+15            } 
+16            else if (token.equals("*")) {
+17                int num1 = st.pop();
+18                int num2 = st.pop();
+19                st.push(num2 * num1);
+20            }
+21            else if (token.equals("/")) {
+22                int num1 = st.pop();
+23                int num2 = st.pop();
+24                st.push(num2 / num1);
+25
+26            } else {
+27                st.push(Integer.parseInt(token));
+28            }
+29        }
+30        return st.peek();
+31    }
+32}
