@@ -1,14 +1,12 @@
-// Last updated: 5/25/2026, 11:17:35 AM
-class Solution {
-    public boolean canJump(int[] nums) {
-        int g = nums.length - 1;
-
-        for (int i = nums.length - 2; i >= 0; i--) {
-            if (i + nums[i] >= g) {
-                g = i;
-            }
-        }
-
-        return g == 0;        
-    }
-}
+// Last updated: 8/20/2026, 12:50:52 AM
+1class Solution {
+2    public boolean canJump(int[] nums) {
+3        int g = nums.length - 1;
+4        for(int i=nums.length-2;i>=0;i--) {
+5            if(i+nums[i]>=g) {
+6                g=i;
+7            }
+8        }
+9        return g == 0;        
+10    }
+11}
