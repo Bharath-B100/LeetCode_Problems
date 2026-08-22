@@ -1,13 +1,11 @@
-// Last updated: 8/22/2026, 12:37:46 PM
+// Last updated: 8/22/2026, 12:38:58 PM
 1class Solution {
-2    public boolean canMakeArithmeticProgression(int[] arr) {
-3        Arrays.sort(arr);
-4        int diff = arr[1]-arr[0];
-5        for(int i = 2; i < arr.length; i++) {
-6            if(arr[i] - arr[i - 1] != diff) {
-7                return false;
-8            }
-9        }
-10        return true;
-11    }
-12}
+2    public int pivotInteger(int n) {
+3      int total=n*(n+1)/2;
+4      int x=(int) Math.sqrt(total);
+5      if(x*x == total){
+6        return x;
+7      }
+8      return -1;
+9    }
+10}
