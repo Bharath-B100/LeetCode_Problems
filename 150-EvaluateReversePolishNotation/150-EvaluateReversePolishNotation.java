@@ -1,4 +1,4 @@
-// Last updated: 6/22/2026, 10:28:00 AM
+// Last updated: 8/28/2026, 1:37:12 AM
 1class Solution {
 2    public int evalRPN(String[] t) {
 3        Stack<Integer> st = new Stack<>();
